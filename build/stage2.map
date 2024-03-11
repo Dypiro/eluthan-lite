@@ -1,0 +1,92 @@
+Open Watcom Linker Version 2.0 beta Mar 10 2024 01:47:39 (64-bit)
+Copyright (c) 2002-2024 The Open Watcom Contributors. All Rights Reserved.
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       24/03/11 14:13:55
+Executable Image: ../../../build//stage2.bin
+creating a RAW Binary Image executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          00000670             0000009e
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+_ENTRY                 CODE           AUTO           00000000        00000013
+_TEXT                  CODE           AUTO           00000013        0000065d
+CONST                  DATA           DGROUP         00000670        0000008c
+CONST2                 DATA           DGROUP         000006fc        00000011
+_DATA                  DATA           DGROUP         0000070e        00000000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: ../../../build//stage2/asm/main.obj(main.asm)
+00000000       entry
+Module: ../../../build//stage2/asm/x86.obj(x86.asm)
+00000013       _x86_div64_32
+00000041       _x86_Video_WriteCharTeletype
+Module: ../../../build//stage2/c/main.obj(/mnt/d/C projects/osdev/eluthan_os/src/bootloader/stage2/main.c)
+00000054       _cstart_
+Module: ../../../build//stage2/c/stdio.obj(/mnt/d/C projects/osdev/eluthan_os/src/bootloader/stage2/stdio.c)
+000000de+      putc_
+00000105       puts_
+0000013c+      puts_f_
+00000179       _printf
+000003fc+      printf_number_
+000006fc+      _g_HexChars
+
+
+                        +---------------------+
+                        |   Module Segments   |
+                        +---------------------+
+
+! = 32-bit segment
+c = initialized communal data
+
+Module          Segment               Class           Address         Size
+======          =======               =====           =======         ====
+
+main.asm        _ENTRY                CODE           00000000         00000013
+x86.asm         _TEXT                 CODE           00000013         00000041
+/mnt/d/C projects/osdev/eluthan_os/src/bootloader/stage2/main.c
+                _TEXT                 CODE           00000054         0000008a
+                CONST                 DATA           00000670         0000008c
+                CONST2                DATA           000006fc         00000000
+                _DATA                 DATA           0000070e         00000000
+/mnt/d/C projects/osdev/eluthan_os/src/bootloader/stage2/stdio.c
+                _TEXT                 CODE           000000de         00000592
+                CONST                 DATA           000006fc         00000000
+                CONST2                DATA           000006fc         00000011
+                _DATA                 DATA           0000070e         00000000
+Warning! W1014: stack segment not found
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  0200 (512.)
+Memory size:  070e (1806.)
+Entry point address: 00000000
+Link time: 00:00.80
