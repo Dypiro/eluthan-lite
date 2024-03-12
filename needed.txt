@@ -1,6 +1,0 @@
-dosfstools
-nasm
-qemu-system-i386
-gcc
-mtools
-watcom
