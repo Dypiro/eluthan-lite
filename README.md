@@ -1,4 +1,4 @@
-# Forward-OS
+# Eluthan-os
 A simple open-source terminal-based operating system that runs in grub.
 Inspired from Forward OS
 ## Installation
