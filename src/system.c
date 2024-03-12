@@ -49,7 +49,13 @@ void is_cmd_on() {
 void is_cmd_off() {
 	is_cmd = 0;
 }
-
+void reboot() {// This is not ACPI its just a 8042 reset copied from osdev.org
+  uint_8 good = 0x02;
+  while (good & 0x02)
+    good = inb8(0x64);
+  outb8(0x64, 0xFE);
+  asm("hlt");
+}
 // Main function for executing terminal commands
 // All commands with arguments require 1 space in between opcode and argument
 void run_command() {
@@ -58,9 +64,7 @@ void run_command() {
 	
 	// halts the cpu
 	if(str_startswith(command, "hlt") == 1) {
-		text_color(BLACK, BLACK);
-		clear_screen();
-		halt();
+		reboot();
 	}
 	/* prints out string next to it with a new line
 	 * EX:
