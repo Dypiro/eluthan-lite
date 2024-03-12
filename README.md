@@ -10,3 +10,4 @@ $ make
 ```bash
 $ qemu-system-i386 -cdrom eluthan-lite.iso
 ```
+there is already a premade iso in case you can't compile it
