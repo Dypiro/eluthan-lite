@@ -12,6 +12,8 @@ Make sure to use the cross compiler or replace CC = gcc and add -m32 to CCFLAGS 
 $ qemu-system-i386 -cdrom eluthan-lite.iso
 ```
 Precompiled iso included
+## Thanks
 Thanks to g_dn_w for helping me!
 In honor i will provide his os project:
 https://github.com/roidsos/h0r.net
+And thanks all to those who support me in this project!
