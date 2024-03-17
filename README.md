@@ -13,7 +13,8 @@ $ qemu-system-i386 -cdrom eluthan-lite.iso
 ```
 Precompiled iso included
 ## Thanks
+Thanks all to those who support me in this project!
+## Special thanks
 Thanks to g_dn_w for helping me!
 His os project:
 https://github.com/roidsos/h0r.net
-. And thanks all to those who support me in this project!
