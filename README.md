@@ -6,9 +6,12 @@ Inspired from Forward OS
 $ sudo apt-get install xorriso build-essential qemu nasm 
 $ make
 ```
-make sure to use the cross compiler or replace CC = gcc and add -m32 to CCFLAGS to use normal gcc
+Make sure to use the cross compiler or replace CC = gcc and add -m32 to CCFLAGS to use normal gcc
 ## Usage
 ```bash
 $ qemu-system-i386 -cdrom eluthan-lite.iso
 ```
-precompiled iso
+Precompiled iso included
+Thanks to g_dn_w for helping me!
+In honor i will provide his os project:
+https://github.com/roidsos/h0r.net
