@@ -1,7 +1,7 @@
 # Nuke built-in rules and variables.
 override MAKEFLAGS += -rR
 
-override IMAGE_NAME := eluthan-lite
+override IMAGE_NAME := eluthan-iso
 
 # Convenience macro to reliably declare user overridable variables.
 define DEFAULT_VAR =
