@@ -1,7 +1,6 @@
 #include "Heap.h"
 #include <stdbool.h>
 MemorySegment* first_free;
-
 void InitHeap(uint32_t heapstart ,uint32_t heaplength){
     first_free = (MemorySegment*)heapstart;
     first_free->length          = heaplength - sizeof(MemorySegment);

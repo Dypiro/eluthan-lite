@@ -39,7 +39,7 @@ void is_cmd_on() {
 void is_cmd_off() {
 	is_cmd = 0;
 }
-void reboot() {// This is not ACPI its just a 8042 reset copied from osdev.org
+void reboot() {// Its just a 8042 reset copied from osdev.org
   uint8_t good = 0x02;
   while (good & 0x02)
     good = inb8(0x64);
@@ -103,6 +103,12 @@ void run_command() {
 	 * 	Hello, world!!
 	 *
 	 */
+	else if(str_startswith(command, "crash")) {
+		char a = 'a';
+		char b = 'b';
+		if(letti(a)!=-1 && letti(b)!=-1)
+			reg[letti(a)] /= reg[letti(b)];
+	}
 	else if(str_startswith(command, "println")) {
 		putslns(command, 8, size);
 	} 
@@ -206,6 +212,7 @@ void run_command() {
 		putsln(">>> rng          :: displays a random number");
 		putsln(">>> println text :: print out a piece of text with a line");
 		putsln(">>> help         :: show help command");
+		putsln(">>> crash        :: Crashes the pc");
 	} else {
 		puts(">>> Unknown command: ");
 		putsln(command);

@@ -12,7 +12,6 @@ typedef struct{
     uint32_t MemorySegmentAddr : 31;
     bool IsAligned : 1;
 }AlignedMemorySegment;
-
 void InitHeap(uint32_t heapstart ,uint32_t heaplength);
 void* malloc(uint32_t size);
 void* aligned_alloc(uint32_t alignment,uint32_t size);

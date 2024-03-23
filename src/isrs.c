@@ -90,7 +90,7 @@ void isrs_install()
 *  exception_message[interrupt_number] */
 unsigned char *exception_messages[] =
 {
-    "Division By Zero",
+    "Divison By Zero",
     "Debug",
     "Non Maskable Interrupt",
     "Breakpoint",
@@ -138,7 +138,7 @@ void fault_handler(struct regs *r)
     if (r->int_no < 32)
     {
         puts(exception_messages[r->int_no]);
-        puts(" Exception. System Halted!\n");
+        puts(" Exception. System Halted! Kernel panic initiliazed!\n");
         for (;;);
     }
 }
