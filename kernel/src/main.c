@@ -6,6 +6,8 @@
 #include <flanterm/backends/fb.h>
 #include "kernel.h"
 #include "printf.h"
+#include "gdt.h"
+
 void outb8(uint16_t port, uint8_t value) {
     asm("outb %1, %0" : : "dN" (port), "a" (value));
 }
@@ -104,6 +106,8 @@ void timer_init() {
     // Send command byte to PIT
     outb8(PIT_COMMAND_PORT, 0x36); // 0x36 sets channel 0, access mode, and operating mode
 }
+
+
 // The following will be our kernel's entry point.
 // If renaming _start() to something else, make sure to change the
 // linker script accordingly.
@@ -125,6 +129,7 @@ void _start(void) {
     ft_ctx = flanterm_fb_simple_init(
     framebuffer->address, framebuffer->width, framebuffer->height, framebuffer->pitch
     );
+    GDT_MAIN();
     timer_init();
 
     kmain();

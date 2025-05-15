@@ -22,8 +22,6 @@ write_port:
     out dx, al       ; write to the port
     ret
 
-
-
 section .bss
 align 16
 resb 8192           ; 8KB for stack
